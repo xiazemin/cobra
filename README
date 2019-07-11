@@ -1,0 +1,63 @@
+cobra 和cobra 生成器是不同的目录,生成器需要单独安装
+https://github.com/spf13/cobra#installing
+https://github.com/spf13/cobra/blob/master/cobra/README.md
+
+
+
+$cobra init
+Error: required flag(s) "pkg-name" not set
+Usage:
+  cobra init [name] [flags]
+
+原因:https://github.com/spf13/cobra/issues/901
+$cobra init --pkg-name github.com/xiazemin/cobra
+
+
+$tree
+.
+|____.git
+| |____branches
+| |____config
+| |____description
+| |____HEAD
+| |____hooks
+| | |____applypatch-msg.sample
+| | |____commit-msg.sample
+| | |____post-update.sample
+| | |____pre-applypatch.sample
+| | |____pre-commit.sample
+| | |____pre-push.sample
+| | |____pre-rebase.sample
+| | |____prepare-commit-msg.sample
+| | |____update.sample
+| |____info
+| | |____exclude
+| |____objects
+| | |____info
+| | |____pack
+| |____refs
+| | |____heads
+| | |____tags
+|____cmd
+| |____root.go
+|____LICENSE
+|____main.go
+
+生成文件:
+|____cmd
+| |____root.go
+|____LICENSE
+|____main.go
+
+$go build -o m main.go
+$./m
+A longer description that spans multiple lines and likely contains
+examples and usage of using your application. For example:
+
+Cobra is a CLI library for Go that empowers applications.
+This application is a tool to generate the needed files
+to quickly create a Cobra application.
+
+
+
+
