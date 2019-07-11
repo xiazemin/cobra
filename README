@@ -72,6 +72,13 @@ config created at /Users/didi/goLang/src/github.com/xiazemin/cobra
 新建文件
 cmd/config.go
 
+$cobra add create -p 'configCmd'
+create created at /Users/didi/goLang/src/github.com/xiazemin/cobra
+
+新建文件
+cmd/create.go
+
+
 
 
 
