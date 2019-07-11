@@ -59,5 +59,21 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.
 
 
+$cobra add serve
+serve created at /Users/didi/goLang/src/github.com/xiazemin/cobra
+
+
+新建文件
+	cmd/serve.go
+
+$          cobra add config
+config created at /Users/didi/goLang/src/github.com/xiazemin/cobra
+
+新建文件
+cmd/config.go
+
+
+
+
 
 
