@@ -190,5 +190,40 @@ grandchild called
 abc <nil>
 
 
+生成文档
+在root.go中增加
+func Get()*cobra.Command{
+  return rootCmd
+}
+main.go 中import
+"github.com/spf13/cobra/doc"
+
+在main中增加
+  err := doc.GenMarkdownTree(cmd.Get(), "./")
+  if err != nil {
+    log.Fatal(err)
+  }
+
+$ go build main.go
+../../../spf13/cobra/doc/man_docs.go:27:2: cannot find package "github.com/cpuguy83/go-md2man/md2man" in any of:
+        /usr/local/go/src/github.com/cpuguy83/go-md2man/md2man (from $GOROOT)
+        /Users/didi/goLang/src/github.com/cpuguy83/go-md2man/md2man (from $GOPATH)
+        /Users/didi/PhpstormProjects/go/src/github.com/cpuguy83/go-md2man/md2man
+
+
+$ go get github.com/cpuguy83/go-md2man/md2man
+
+
+$ ./main
+
+生成3个文件
+├── gen.md
+├── gen_serve.md
+├── gen_serve_create.md
+├── gen_serve_create_grandchild.md
+
+
+
+
 
 

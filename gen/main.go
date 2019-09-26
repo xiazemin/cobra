@@ -15,8 +15,18 @@ limitations under the License.
 */
 package main
 
-import "github.com/xiazemin/cobra/gen/cmd"
+import (
+  "github.com/xiazemin/cobra/gen/cmd"
+  "github.com/spf13/cobra/doc"
+  "log"
+)
 
 func main() {
   cmd.Execute()
+  //kubectl := cmd.NewKubectlCommand(cmdutil.NewFactory(nil), os.Stdin, ioutil.Discard, ioutil.Discard)
+
+  err := doc.GenMarkdownTree(cmd.Get(), "./")
+  if err != nil {
+    log.Fatal(err)
+  }
 }
